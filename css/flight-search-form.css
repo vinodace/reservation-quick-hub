@@ -1,0 +1,141 @@
+/* Fligh search background image change from css */
+.flight-banner {position: relative; width: 100%; height: 450px; /*margin-bottom:110px;*/ }
+.flight-banner:before {content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background:rgba(0, 0, 0, 0.5); z-index: 1;}
+.flight-banner > img {position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: fade 12s infinite; }
+.flight-banner > img:nth-child(1) {animation-delay: 0s; }
+.flight-banner > img:nth-child(2) {animation-delay: 4s; }
+.flight-banner > img:nth-child(3) {animation-delay: 8s; }
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.container-pos {position: relative; left: 0; top:0; right: 0; bottom: 0px; z-index: 2; padding:100px 0;}
+.flight-banner-hding {font-size:56px; font-weight: 700;  display: block; color: #000}
+.flight-banner-prgh {font-size:20px; display: block; color: #000;}
+
+/* Flight search form design */
+.flight-search-box {background: #fff; border-radius: 20px; padding:20px; margin-top:40px; box-shadow: 0px 8px 16px 2px #c0c0c0;}
+.flight-nav-tabs {border:none !important; gap: 10px;}
+.flight-nav-tabs li button { border:1px solid #ffae38 !important; border-radius:5px !important; margin-left:0px !important; }
+.flight-nav-tabs li button.active {background:#ffae38 !important; }
+.flight-nav-tabs li button > i {margin-right: 5px;}
+
+.form-group {position: relative; margin-bottom:15px; }
+.filter-lbl {font-size: 14px; font-weight: 400; position: absolute; top: 10px; left: 20px;}
+.filter-field {width: 100%; padding: 37px 20px 9px; border-radius: 15px;  font-size: 18px; font-weight: 700; border:1px solid #f1e3cd; background: #fff4e3; appearance: none;}
+.filter-field:focus {outline: none;}
+.dropdown-panel {display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; border: 1px solid #ccc; box-shadow: 0 0px 12px rgba(0,0,0,0.2); padding: 20px; z-index: 1000; border-radius: 15px; }
+.traveller-row {display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.traveller-row > span {font-size:14px;}
+.traveller-row > span > span {color: #717070; font-size: 11px; display: inline-block;}
+.count-btn {width: 30px; height: 30px; border-radius: 50%; border: 1px solid #888; background: #f5f5f5; cursor: pointer; text-align: center; line-height: 23px; font-size: 16px; }
+.passenger-count-output {width: 20px; display: inline-flex; justify-content: center; font-family: 14px;}
+label:has(.choose-trip-type) { padding: 5px 15px; border-radius: 50px; cursor: pointer; font-size:13px; display: inline-flex; align-items: center; gap:8px; margin-right: 5px;}
+label:has(.choose-trip-type:checked) {background: #cdd5f5; color: #000;}
+.travel-class-lbl {font-size: 14px; font-weight: 700; padding-bottom: 5px;}
+#returnDate:disabled {opacity: 0.5;}
+
+@media only screen and (max-width:767px) {
+  .flight-banner {height: auto;}
+  .flight-banner-hding {font-size:30px}
+}
+@media only screen and (min-width:992px) {
+  .field-right-radius-0 {border-radius: 15px 0px 0px 15px !important;}
+  .field-left-radius-0 {border-radius: 0px 15px 15px 0px !important}
+  .field-radius-0 {border-radius: 0px !important;}
+}
+
+
+/* Flight search result box */
+.flight-result-bg {background: #f7f7f7; padding: 150px 0 80px;}
+.flight-result-box {background: #fff; padding: 20px; margin-bottom: 10px; border-radius: 10px;}
+.flight-result-logo {width: 50px; height: 50px; border-radius: 5px;}
+.flight-logo-name {font-size:14px; text-transform: capitalize; color:#999; margin:0px; padding-bottom: 0; pading-top:5px;}
+.flight-time {font-size:20px; font-weight: 700; text-transform: uppercase; margin:0; padding: 0;}
+.flight-location {font-size:13px; color: #222; font-weight: 500; margin:0; padding: 0;}
+.flight-result-duration { text-align:center; display:flex; flex-direction:column; color:#999; font-size:13px; }
+.flight-duration-line {width:100%; border-top: 1px solid #999;margin: 5px 0; position: relative; display: flex; justify-content: space-around; gap:5px;}
+.flight-duration-line:before {content: ''; position:absolute; left: 0; top:-6px; width: 10px; height: 10px; border-radius: 50%; background: #999;}
+.flight-duration-line:after {content: ''; position:absolute; right: 0; top:-6px; width: 10px; height: 10px; border-radius: 50%; background: #999;}
+.flight-duration-line > div[class^="step-"] {width: 10px; height: 10px; border:1px solid #999; background: #fff; border-radius: 2px; margin-top:-6px;}
+.flight-duration-line > div[class^="step-"].active {border-color:#ff3300;}
+.flight-result-price-area { position: relative; height: 100%; border-left: 1px solid #bcbcbc; margin-right: -6px; display: flex; align-items: center; justify-content: center; gap: 15px;}
+.flight-price {font-size:22px; font-weight: 700; margin-bottom: 0; color:#ff3300; text-decoration: none;}
+
+@media (max-width: 767px) {
+  .flight-time {font-size: 18px;}
+  .flight-result-price-area {border-left: none; border-top:1px solid #bcbcbc;padding-top:10px; margin-top:10px; justify-content: space-between;}
+}
+
+.flight-search-result-bg {background: #e3e3e3; padding:0px 0 40px; border-radius: 30px 30px 0 0; margin-top:80px;}
+.sticky-sidebar {position: sticky; top:0px;}
+.flight-search-box-neg_mt {margin-top:-65px;}
+.filter-airline-logo {width: 18px; height: 18px; object-fit: contain; margin-right: 5px;}
+
+/* Waiting page */
+.search-form-bg {background: #f7f7f7; padding: 80px 0;}
+.search-form-box {background: #fff; border-radius: 4px; padding:30px;}
+.search-form-title {font-size:14px; color: #999; margin: 0;}
+.search-form-name {font-size:22px; font-weight: 700; color: #000;}
+.search-form-to {font-size: 24px; font-weight: 700; color: #ffd9a2;}
+.search-form-list {margin: 0; padding:0px; display: flex; justify-content:center; }
+.search-form-list li {list-style: none; border-right: 1px solid #000; font-size: 13px; font-weight: 700; padding:0 15px;}
+.search-form-list li:last-child {border-right: none;}
+.search-form-hding {font-size: 26px; font-weight: 700; color: #2d479e; display: block; text-align: center;}
+.wait-hding {font-size: 24px; font-weight: 700; text-align: center; display: block; color: #236de8;}
+.search-form-loader {width: 300px; margin:auto; display: block;}
+.search-form-callbtn {font-size: 14px; font-weight: 600; display: inline-block; text-align: center; text-transform: uppercase; background: #ffd9a2; color: #000; border-radius: 4px; padding: 12px 20px; text-decoration: none; border:none; margin:30px auto 20px; display: table;}
+.search-form-callbtn:hover {color: #000;}
+.search-form-callbtn > i {margin-right: 5px; font-size:16px;}
+
+.show-data {display: none;}
+
+/* Airline Modal */
+.airline-modal-design .modal-header {display: block !important; background-color: #2057a4; padding:30px 20px 40px !important;}
+.airline-modal-design .modal-close {position: absolute; right: 10px; top:10px; font-size: 30px; line-height: 1; font-weight: 300; text-decoration: none; color: #fff;}
+.modal-header-hding {font-size: 30px; font-weight: 700; color: #f6ef07; text-transform:capitalize; text-align: center; display: block; margin:0; padding: 0 0 5px;}
+.modal-header-subhding {font-size: 18px; font-weight: 600; color: #fff; text-align: center; display: block; margin-bottom: 0;}
+.modal-end-timer {display: table; padding: 10px 30px; font-size: 18px; text-align: center; border-radius: 40px; background: #fbbb05; margin: -43px auto 10px;}
+.modal-offer-text {font-size:24px; font-weight: 300; text-transform: uppercase; display: block; text-align: center; padding:20px;}
+.modal-offer-text > span {font-weight: 700; color: #ff3300;}
+.modal-search-form-name {font-size: 17px; font-weight: 700;}
+.modal-search-form-icon {font-size: 30px; font-weight: 700; color: #000;}
+.modal-deal-box {background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0px 0px 12px 4px #d8d7d7;}
+.modal-deal-name {font-size:18px; font-weight: 700; margin-bottom: 5px;}
+.modal-deal-text {font-size: 14px; font-weight: 400; margin-bottom: 0; padding: 0;}
+.modal-search-form-list {margin: 0; padding:3px 0 0; display: flex;  }
+.modal-search-form-list li {list-style: none; border-right: 1px solid #999; color: #6c6c6c; font-size: 12px; font-weight: 400; padding:0 8px;}
+.modal-search-form-list li:last-child {border-right: none;}
+.modal-search-form-list li:first-child {padding-left: 0px;}
+.modal-price-deal {border-left: 1px solid #999; text-align: right; padding:0px;}
+.modal-price-per-person {font-size:12px; color: #666; margin: 0;}
+.modal-call-btn {display: table; padding: 10px 30px; font-size: 18px; font-weight: 700; text-align: center; border-radius: 40px; background: #fbbb05; margin: 20px auto; text-decoration: none; color: #000;}
+.modal-call-btn > i {margin-right: 10px;}
+.modal-note {font-size:10px; color: #999; text-align: center; display: block; margin-top:30px; padding-bottom: 20px;}
+
+@media (max-width: 767px) {
+  .modal-price-deal {border-left: none; border-top:1px solid #999; margin-top:15px; padding-top:15px; text-align: left;}
+  .modal-offer-text {font-size: 20px; padding: 15px 20px;}
+  .modal-search-form-name {font-size: 15px;}
+  .modal-header-subhding {font-size: 15px;}
+}
+
+
+/* Booking page count tr */
+#traveller-table tr td:first-child {font-weight: 700;}
+/*#traveller-table {counter-reset: rowNumber; }
+#traveller-table tr {counter-increment: rowNumber; }
+#traveller-table tr td:first-child::before {content: counter(rowNumber); }
+#traveller-table tr:first-child {counter-reset: none; }*/
+
+.passenger-table {font-size:13px;}
+.traveller-form-lbl {font-size:13px; display: block; padding-bottom: 5px;}
+.passenger-table .traveller-form-field {width: 100%; border-radius: 4px; padding:6px 15px; font-size: 13px; border:1px solid #999;}
+.add-traveller-btn, .remove-traveller-tr {width: 30px; height: 30px; font-size:10px; color:#fff !important; cursor: pointer !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; border:none;}
+.add-traveller-btn {background: green; margin-right: 9px;}
+.remove-traveller-tr { background: #ff3300 !important; margin-top:22px !important;}
